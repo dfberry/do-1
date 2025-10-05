@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'npm_packages/api_server/**'
+      - '.github/workflows/deploy-to-digital-ocean.yml'
     branches:
       - main
 
