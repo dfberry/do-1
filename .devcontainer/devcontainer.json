@@ -23,7 +23,8 @@
         "ms-python.python",
         "ms-azuretools.vscode-docker",
         "rust-lang.rust-analyzer",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "humao.rest-client"
       ]
     }
   },

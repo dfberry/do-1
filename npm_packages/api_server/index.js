@@ -4,7 +4,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const VERSION = '1.0.0';
 
-app.get('/status', (req, res) => {
+// Disable the 'X-Powered-By' header
+app.disable('x-powered-by');
+
+app.get('/api/status', (req, res) => {
   res.json({
     status: 'running',
     version: VERSION
