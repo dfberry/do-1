@@ -1,4 +1,4 @@
-name: Deploy to DigitalOcean Container Registry
+name: DO CR deploy Node.js API Server
 
 on:
   workflow_dispatch:
