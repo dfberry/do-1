@@ -1,0 +1,37 @@
+name: Deploy to DigitalOcean Container Registry
+
+on:
+  push:
+    paths:
+      - 'npm_packages/api_server/**'
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Log in to DigitalOcean Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: registry.digitalocean.com
+          username: ${{ secrets.DO_CR_LOGIN }}
+          password: ${{ secrets.DO_CR_PWD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./npm_packages/api_server
+          push: true
+          tags: registry.digitalocean.com/cr-dfb/npm-api-server:latest
+
+      - name: Log out from DigitalOcean Container Registry
+        run: docker logout registry.digitalocean.com

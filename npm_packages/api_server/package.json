@@ -1,0 +1,14 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "description": "Basic Express.js 5 API server with status endpoint"
+}

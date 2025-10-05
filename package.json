@@ -1,0 +1,10 @@
+{
+  "name": "do-1-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "npm_packages/*"
+  ],
+  "description": "Monorepo managed with npm workspaces for packages directory.",
+  "license": "MIT"
+}
